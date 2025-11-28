@@ -8,13 +8,15 @@
   --fuco-text-main: #111827;
   --fuco-text-muted: #6b7280;
 
-  /* Colores inspirados en la palabra "Colores" del logo */
-  --fuco-accent-main: #0f766e; /* verde petróleo (CTA) */
-  --fuco-accent-1: #2563eb; /* azul */
-  --fuco-accent-2: #22c55e; /* verde */
-  --fuco-accent-3: #a855f7; /* morado */
-  --fuco-accent-4: #f97316; /* naranja */
-  --fuco-accent-5: #eab308; /* amarillo */
+  /* Colores inspirados en la palabra "Colores" */
+  --fuco-blue: #2563eb;
+  --fuco-green: #22c55e;
+  --fuco-purple: #a855f7;
+  --fuco-orange: #f97316;
+  --fuco-yellow: #eab308;
+  --fuco-red: #ef4444;
+
+  --fuco-accent-main: #0f766e; /* botón principal */
 }
 
 /* =========================
@@ -38,8 +40,8 @@ body {
     sans-serif;
   color: var(--fuco-text-main);
   background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(248, 113, 113, 0.08), transparent 55%),
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.06), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.06), transparent 55%),
     var(--fuco-bg);
 }
 
@@ -102,6 +104,24 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Subrayado arcoíris bajo los títulos de sección */
+.section-header h2::after {
+  content: "";
+  display: block;
+  margin-top: 0.45rem;
+  width: 80px;
+  height: 3px;
+  border-radius: 999px;
+  background-image: linear-gradient(
+    90deg,
+    var(--fuco-blue),
+    var(--fuco-green),
+    var(--fuco-yellow),
+    var(--fuco-orange),
+    var(--fuco-red)
+  );
+}
+
 .section-header p {
   color: var(--fuco-text-muted);
   max-width: 620px;
@@ -151,11 +171,32 @@ body {
 .service-card,
 .support-card,
 .contact-card {
+  position: relative;
   background-color: var(--fuco-surface);
   border-radius: 18px;
-  padding: 1.5rem 1.4rem;
+  padding: 1.6rem 1.5rem 1.5rem;
   border: 1px solid var(--fuco-border);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+/* Barra superior arcoíris en tarjetas importantes */
+.section-card::before,
+.service-card::before,
+.support-card::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 3px;
+  background-image: linear-gradient(
+    90deg,
+    var(--fuco-blue),
+    var(--fuco-green),
+    var(--fuco-yellow),
+    var(--fuco-orange),
+    var(--fuco-red)
+  );
 }
 
 .section-card-soft {
@@ -206,6 +247,20 @@ body {
   color: #9ca3af;
 }
 
+/* Colores por tarjeta de servicio (ligero) */
+.services-grid .service-card:nth-child(1) {
+  border-left: 4px solid var(--fuco-blue);
+}
+.services-grid .service-card:nth-child(2) {
+  border-left: 4px solid var(--fuco-green);
+}
+.services-grid .service-card:nth-child(3) {
+  border-left: 4px solid var(--fuco-purple);
+}
+.services-grid .service-card:nth-child(4) {
+  border-left: 4px solid var(--fuco-orange);
+}
+
 /* =========================
    HERO (PORTADA)
    ========================= */
@@ -214,12 +269,12 @@ body {
   margin: 0 auto 3.5rem;
   background: linear-gradient(
     120deg,
-    rgba(37, 99, 235, 0.10),
-    rgba(34, 197, 94, 0.10),
-    rgba(234, 179, 8, 0.10)
+    rgba(37, 99, 235, 0.12),
+    rgba(34, 197, 94, 0.12),
+    rgba(234, 179, 8, 0.12)
   );
-  border-radius: 26px;
-  padding: 2rem 1.6rem;
+  border-radius: 28px;
+  padding: 2.2rem 1.8rem;
   border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
@@ -244,23 +299,24 @@ body {
 .hero-pill {
   display: inline-flex;
   align-items: center;
-  padding: 0.32rem 0.8rem;
+  padding: 0.32rem 0.9rem;
   border-radius: 999px;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  background: rgba(15, 23, 42, 0.08);
-  color: #f9fafb;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--fuco-text-muted);
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
-/* Título con letras de colores */
 .hero-title {
-  font-size: clamp(2.3rem, 4vw, 3rem);
+  font-size: clamp(2.4rem, 4.2vw, 3.1rem);
   line-height: 1.05;
   letter-spacing: -0.06em;
   color: var(--fuco-text-main);
 }
 
+/* "Colores" multicolor estilo logo */
 .hero-title-colores {
   display: inline-flex;
   gap: 0.01em;
@@ -271,25 +327,25 @@ body {
 }
 
 .hero-title-colores span:nth-child(1) {
-  color: var(--fuco-accent-1);
+  color: var(--fuco-blue);
 }
 .hero-title-colores span:nth-child(2) {
-  color: var(--fuco-accent-2);
+  color: var(--fuco-green);
 }
 .hero-title-colores span:nth-child(3) {
-  color: var(--fuco-accent-3);
+  color: var(--fuco-purple);
 }
 .hero-title-colores span:nth-child(4) {
-  color: var(--fuco-accent-4);
+  color: var(--fuco-orange);
 }
 .hero-title-colores span:nth-child(5) {
-  color: var(--fuco-accent-5);
+  color: var(--fuco-yellow);
 }
 .hero-title-colores span:nth-child(6) {
-  color: #ef4444;
+  color: var(--fuco-red);
 }
 .hero-title-colores span:nth-child(7) {
-  color: #22c55e;
+  color: var(--fuco-green);
 }
 
 .hero-title-short {
@@ -298,7 +354,7 @@ body {
 
 .hero-subtitle {
   font-size: 0.99rem;
-  color: #f9fafb;
+  color: #1f2937; /* texto oscuro para mejor lectura */
   max-width: 540px;
   line-height: 1.7;
 }
@@ -326,10 +382,11 @@ body {
   font-size: 0.78rem;
   border-radius: 999px;
   padding: 0.26rem 0.7rem;
-  background-color: rgba(249, 250, 251, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   color: #111827;
 }
 
+/* colores suaves por tag */
 .hero-tags span:nth-child(1) {
   border: 1px solid rgba(37, 99, 235, 0.35);
 }
@@ -356,10 +413,10 @@ body {
   width: 100%;
   max-width: 420px;
   background-color: var(--fuco-surface);
-  border-radius: 20px;
-  padding: 1.7rem 1.6rem;
+  border-radius: 22px;
+  padding: 1.8rem 1.7rem;
   border: 1px solid var(--fuco-border);
-  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.18);
 }
 
 .hero-logo-wrap {
@@ -370,10 +427,10 @@ body {
 }
 
 .hero-logo-circle {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 999px;
-  background: #f3f4f6;
+  background: radial-gradient(circle at 30% 0, #ffffff, #e5e7eb);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -400,7 +457,7 @@ body {
 }
 
 .hero-card-item {
-  padding: 0.65rem 0.7rem;
+  padding: 0.7rem 0.75rem;
   border-radius: 14px;
   background-color: #f9fafb;
   border: 1px solid var(--fuco-border);
@@ -504,7 +561,7 @@ body {
 }
 
 /* =========================
-   BUTTON WHATSAPP
+   BOTÓN WHATSAPP
    ========================= */
 .whatsapp-button {
   display: inline-flex;
@@ -516,11 +573,14 @@ body {
   font-weight: 500;
   text-decoration: none;
   color: #f9fafb;
-  background-color: var(--fuco-accent-main);
+  background-image: linear-gradient(
+    90deg,
+    var(--fuco-green),
+    var(--fuco-blue)
+  );
   box-shadow: 0 12px 26px rgba(15, 118, 110, 0.35);
   white-space: nowrap;
 }
-
 
 .whatsapp-icon {
   font-size: 1rem;
@@ -616,8 +676,8 @@ body {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: rgba(15, 118, 110, 0.8);
-  box-shadow: 0 0 0 1px rgba(15, 118, 110, 0.3);
+  border-color: rgba(37, 99, 235, 0.8);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
 }
 
 .contact-form-button {
@@ -627,10 +687,14 @@ body {
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  background-color: var(--fuco-accent-main);
+  background-image: linear-gradient(
+    90deg,
+    var(--fuco-blue),
+    var(--fuco-purple)
+  );
   color: #f9fafb;
   align-self: flex-start;
-  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.35);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
 }
 
 .contact-form-button:hover {
