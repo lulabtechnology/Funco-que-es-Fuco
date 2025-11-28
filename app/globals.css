@@ -504,9 +504,10 @@ body {
 
 @media (min-width: 960px) {
   .media-grid {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* el video ocupa el ancho completo abajo en desktop */
   .media-video-card {
     grid-column: 1 / -1;
   }
@@ -519,6 +520,8 @@ body {
   border: 1px solid var(--fuco-border);
   box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
   padding: 1.2rem 1.2rem 1.3rem;
+  max-width: 460px;        /* 👉 NO se hacen gigantes */
+  margin-inline: auto;     /* 👉 centradas dentro del grid */
 }
 
 .media-image-wrapper {
@@ -527,15 +530,17 @@ body {
   margin-bottom: 0.75rem;
 }
 
+/* foto vertical un poquito más angosta */
 .media-image-wrapper.portrait {
-  max-height: 420px;
+  max-width: 360px;
+  margin-inline: auto;
 }
 
 .media-image {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  /* sin object-fit: cover para que NO recorte nada */
 }
 
 .media-card figcaption {
@@ -543,6 +548,7 @@ body {
   color: var(--fuco-text-muted);
 }
 
+/* VIDEO */
 .media-video-frame {
   border-radius: 14px;
   overflow: hidden;
@@ -552,6 +558,8 @@ body {
 
 .media-video {
   width: 100%;
+  height: auto;
+  max-height: 360px;   /* 👉 no se hace gigante en alto */
   display: block;
 }
 
@@ -559,6 +567,7 @@ body {
   font-size: 0.9rem;
   color: var(--fuco-text-muted);
 }
+
 
 /* =========================
    BOTÓN WHATSAPP
