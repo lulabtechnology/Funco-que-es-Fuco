@@ -1,7 +1,12 @@
 // app/page.js
 import Image from "next/image";
 import WhatsAppButton from "../components/WhatsAppButton";
-import { ADDRESS, EMAIL, PHONE_NUMBER } from "../lib/constants";
+import {
+  ADDRESS,
+  EMAIL,
+  PHONE_NUMBER,
+  WHATSAPP_NUMBER
+} from "../lib/constants";
 
 export default function HomePage() {
   return (
@@ -14,20 +19,16 @@ export default function HomePage() {
               Fundación sin fines de lucro · Desde 2011
             </span>
 
-            <h1 className="hero-title">
-              Fundación Colores (FUCO)
-            </h1>
+            <h1 className="hero-title">Fundación Colores (FUCO)</h1>
 
             <p className="hero-subtitle">
               Desarrollando nuevos estilos de vida para las personas con
-              discapacidad y sus familias, impulsando resiliencia,
-              inclusión y autonomía.
+              discapacidad y sus familias, impulsando resiliencia, inclusión
+              y autonomía.
             </p>
 
             <div className="hero-actions">
-              <WhatsAppButton>
-                Escribir a FUCO por WhatsApp
-              </WhatsAppButton>
+              <WhatsAppButton>Escribir a FUCO por WhatsApp</WhatsAppButton>
 
               <div className="hero-contact-mini">
                 <p>También puedes llamar o escribir a:</p>
@@ -59,8 +60,8 @@ export default function HomePage() {
                 <div>
                   <h2>Inclusión con propósito</h2>
                   <p>
-                    Acompañamiento integral para personas con discapacidad
-                    y sus familias.
+                    Acompañamiento integral para personas con discapacidad y
+                    sus familias.
                   </p>
                 </div>
               </div>
@@ -83,8 +84,8 @@ export default function HomePage() {
                 <div className="hero-card-item">
                   <h3>Familias acompañadas</h3>
                   <p>
-                    Programas de apoyo, manejo del duelo y donaciones
-                    según las necesidades.
+                    Programas de apoyo, manejo del duelo y donaciones según
+                    las necesidades.
                   </p>
                 </div>
               </div>
@@ -115,8 +116,8 @@ export default function HomePage() {
             <p>
               Empoderar integralmente a las personas con discapacidad,
               derribando barreras y ofreciendo apoyo económico, formación
-              laboral y acompañamiento psicológico y social para promover
-              la autosuficiencia y una vida digna.
+              laboral y acompañamiento psicológico y social para promover la
+              autosuficiencia y una vida digna.
             </p>
           </div>
 
@@ -148,8 +149,8 @@ export default function HomePage() {
           <h2>Programas y servicios</h2>
           <p>
             FUCO ofrece una gama integral de servicios para mejorar la
-            calidad de vida de las personas con discapacidad y sus
-            familias, promoviendo su plena inclusión y autonomía.
+            calidad de vida de las personas con discapacidad y sus familias,
+            promoviendo su plena inclusión y autonomía.
           </p>
         </div>
 
@@ -166,7 +167,9 @@ export default function HomePage() {
           <article className="service-card">
             <h3>Educación y capacitación</h3>
             <ul>
-              <li>Acompañamiento educativo para personas con discapacidad.</li>
+              <li>
+                Acompañamiento educativo para personas con discapacidad.
+              </li>
               <li>Capacitación laboral y desarrollo de habilidades.</li>
               <li>Talleres sobre manejo del duelo y resiliencia.</li>
             </ul>
@@ -177,14 +180,18 @@ export default function HomePage() {
             <ul>
               <li>Acompañamiento psicológico y social.</li>
               <li>Espacios de escucha y contención emocional.</li>
-              <li>Orientación para procesos de inclusión en la comunidad.</li>
+              <li>
+                Orientación para procesos de inclusión en la comunidad.
+              </li>
             </ul>
           </article>
 
           <article className="service-card">
             <h3>Donaciones y equipamiento</h3>
             <ul>
-              <li>Donaciones periódicas según las necesidades detectadas.</li>
+              <li>
+                Donaciones periódicas según las necesidades detectadas.
+              </li>
               <li>
                 Apoyo con equipamiento y herramientas para procesos de
                 inclusión.
@@ -234,9 +241,7 @@ export default function HomePage() {
         </div>
 
         <div className="support-cta">
-          <WhatsAppButton>
-            Quiero apoyar a la Fundación
-          </WhatsAppButton>
+          <WhatsAppButton>Quiero apoyar a la Fundación</WhatsAppButton>
         </div>
       </section>
 
