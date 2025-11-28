@@ -224,7 +224,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECCIÓN DE FOTOS Y VIDEO */}
+           {/* SECCIÓN DE FOTOS Y VIDEO */}
       <section id="galeria" className="section section-media">
         <div className="section-header">
           <h2>FUCO en imágenes</h2>
@@ -270,11 +270,7 @@ export default function HomePage() {
 
           <div className="media-video-card">
             <div className="media-video-frame">
-              <video
-                controls
-                poster="/fuco-darien.jpg"
-                className="media-video"
-              >
+              <video controls className="media-video">
                 <source src="/fuco-video.mp4" type="video/mp4" />
                 Tu navegador no soporta video HTML5.
               </video>
@@ -286,6 +282,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
 
       {/* CÓMO AYUDAR */}
       <section id="ayuda" className="section">
