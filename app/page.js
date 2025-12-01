@@ -73,7 +73,7 @@ export default function Home() {
                     marginTop: "0.15rem",
                   }}
                 >
-                  fundacioncolores10@hotmail.com
+                  Info@coloresfuco.org
                 </p>
               </div>
 
@@ -475,8 +475,8 @@ export default function Home() {
                 </li>
                 <li>
                   <span className="contact-label">Correo:</span>{" "}
-                  <a href="mailto:fundacioncolores10@hotmail.com">
-                    fundacioncolores10@hotmail.com
+                  <a href="mailto:Info@coloresfuco.org">
+                    Info@coloresfuco.org
                   </a>
                 </li>
               </ul>
@@ -491,7 +491,7 @@ export default function Home() {
 
               <form
                 className="contact-form"
-                action="mailto:fundacioncolores10@hotmail.com"
+                action="mailto:Info@coloresfuco.org"
                 method="GET"
                 encType="text/plain"
               >
@@ -583,8 +583,8 @@ export default function Home() {
               <li>WhatsApp: +507 6665-1109</li>
               <li>
                 Correo:{" "}
-                <a href="mailto:fundacioncolores10@hotmail.com">
-                  fundacioncolores10@hotmail.com
+                <a href="mailto:Info@coloresfuco.org">
+                  Info@coloresfuco.org
                 </a>
               </li>
             </ul>
