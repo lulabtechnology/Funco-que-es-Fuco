@@ -68,7 +68,7 @@ export default function ContactForm() {
             required
             value={formData.correo}
             onChange={handleChange}
-            placeholder="tucorreo@ejemplo.com"
+            placeholder="info@coloresfuco.org"
           />
         </label>
 
